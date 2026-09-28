@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #070e1e;
+  --color-brand-dark: #0b1528;
+  --color-brand-surface: #111e38;
+  --color-brand-blue: #0052cc;
+  --color-brand-electric: #0066ff;
+  --color-brand-cyan: #00d2ff;
+  --color-brand-light: #f8fafc;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+}
+
+/* Background grid patterns */
+.tech-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 82, 204, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 82, 204, 0.05) 1px, transparent 1px);
+}
+
+.tech-grid-dark {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 210, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 210, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Subtle glow animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.03); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
