@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "node -e \"if(require('fs').existsSync('index.source.html')) require('fs').copyFileSync('index.source.html', 'index.html')\" && vite",
+    "build": "node -e \"if(require('fs').existsSync('index.source.html')) require('fs').copyFileSync('index.source.html', 'index.html')\" && tsc -b && vite build && node scripts/sync-build.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },
